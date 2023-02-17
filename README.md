@@ -71,11 +71,25 @@ aws secretsmanager get-secret-value \
 --secret-id ec2-ssh-key/test-ec2-keypair/private \
 --query SecretString \
 --output text \
---profile prv > cdk-key.pem && chmod 400 cdk-key.pem
+--profile {your profile} > cdk-key.pem && chmod 400 cdk-key.pem
 ```
 
-After that, please follow these steps to get Windows login password using cdk-key.pem
-https://aws.amazon.com/jp/premiumsupport/knowledge-center/retrieve-windows-admin-password/
+**Get instance id**
+
+```
+aws ec2 describe-instances \
+--filter "Name=key-name,Values=test-ec2-keypair" \
+--profile {your profile}
+```
+
+**Get the Windows login password**
+
+```
+aws ec2 get-password-data \
+--instance-id  {your instance id} \
+--priv-launch-key <path-to-pem-file>\cdk-key.pem \
+--profile {your profile}
+```
 
 ### Start session
 
