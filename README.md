@@ -22,7 +22,7 @@ $ npm -v
 8.19.2
 ```
 
-- Install Session Manager plugin for the AWS Cli
+- Install Session Manager plugin for the AWS CLI
   - https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
 
 ## 1. How to run cdk locally
@@ -64,7 +64,8 @@ cdk destroy --profile {your profile}
 ## 2. How to accesss to EC2 (Manual operation)
 
 ### Get Windows login password
-Since the keypair is stored in AWS Secrets Manager, please run the following command to get pem file.
+
+**Get pem file**
 
 ```
 aws secretsmanager get-secret-value \
@@ -101,7 +102,7 @@ aws ssm start-session \
 --profile {your profile}
 ```
 
-### Open remote desktop
+### Access to an instance by remote desktop
 
 - Open remote desktop app
 - Enter `localhost:{your preferable port}`
