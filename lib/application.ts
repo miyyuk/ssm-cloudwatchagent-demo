@@ -40,15 +40,9 @@ export class ApplicationStack extends cdk.Stack {
     // Security group for EC2
     const securityGroup = new ec2.SecurityGroup(this, 'SecurityGroup', {
       vpc,
-      description: 'Allow HTTPS',
+      description: 'Default',
       allowAllOutbound: true
     })
-    // For SSM agent
-    securityGroup.addIngressRule(
-      ec2.Peer.anyIpv4(),
-      ec2.Port.tcp(443),
-      'Allow HTTPS Access'
-    )
 
     // IAM role for EC2
     const role = new iam.Role(this, 'ec2Role', {

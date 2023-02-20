@@ -27,7 +27,7 @@ $ npm -v
 
 ## 1. How to run cdk locally
 
-- Copy `.env.local` to `.env`
+- Copy `.env.local` to create `.env`
 - Add variable in `.env`
 - Set your profile in your local env
 - Run `npm install`
