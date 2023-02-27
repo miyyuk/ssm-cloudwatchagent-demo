@@ -1,6 +1,6 @@
 # ssm-cloudwatchagent-demo
 
-## 0. Prequisite
+## 0. Prerequisite
 
 ```
 $ aws --version
@@ -61,7 +61,7 @@ Please use this command if you want to destroy all resourced created by CDK.
 cdk destroy --profile {your profile}
 ```
 
-## 2. How to accesss to EC2 (Manual operation)
+## 2. How to access to EC2 (Manual operation)
 
 ### Get Windows login password
 
@@ -163,7 +163,7 @@ Ref: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-Clou
 - Click **CWAgent** in **Custom namespaces**
 - Click **ImageId, InstanceId, InstanceType, instance, objectname** in Metrics
 - Check the checkbox whose ...
-  - **Instance name** is **your instance name** 
+  - **Instance name** is **your instance name**
   - **instance** is **C:**
   - **objectname** is **LogicalDesk**
 - You can see the graph showing the percentage of free space of C drive in the target instance.
